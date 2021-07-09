@@ -1,25 +1,24 @@
-
-const ADD_ELEM = 'ADD_ELEM';
-const CLEAR = 'CLEAR';
-const EQUAL = 'EQUAL';
+export const DISPLAY = 'DISPLAY';
+export const EVALUATE = 'EVALUATE';
 
 
-export const addElement = (text) => { 
+// Action creator for displaying expression
+export const getDisplayAction = (array,text) => {
     return {
-     type: ADD_ELEM,
-     text
+        type: DISPLAY,
+        array: array,
+        text: text
     }
-}
+};
 
-export const clear = () => {
+// Action creator for evaluating the expression
+export const getEvaluateAction = (array,text) => {
+    console.log("EVALUATE ACTION");
+    console.log(array);
+    console.log(text);
     return {
-        type: CLEAR,
-    }
-}
-
-export const equal = (value) => { 
-    return {
-        type: EQUAL,
-        value: value
+        type: EVALUATE,
+        array: array,
+        text: text
     }
 }
